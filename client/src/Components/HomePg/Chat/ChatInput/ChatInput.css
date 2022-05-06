@@ -1,0 +1,11 @@
+.ChatInput{
+    font-size: 3vmin;
+    padding: 1%;
+}
+.chatinput__wrapper{
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+input{
+    padding-left: 2%;
+}

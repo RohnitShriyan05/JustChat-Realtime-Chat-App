@@ -1,0 +1,8 @@
+.login__title{
+    font-size: 12vmin;
+}
+.login__signin{
+    font-size: 5vmin;
+    padding:1vmin 2vmin 1vmin 2vmin;
+    text-align: center;
+}
