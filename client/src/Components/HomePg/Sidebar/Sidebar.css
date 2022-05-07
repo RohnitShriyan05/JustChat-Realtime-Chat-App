@@ -4,3 +4,9 @@
 .cellular{
     transform: scale(0.75);
 }
+.sidebar__header{
+    padding-top:1.5vmin;
+    padding-bottom:1vmin;
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+}

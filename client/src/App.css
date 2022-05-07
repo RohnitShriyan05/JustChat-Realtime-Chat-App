@@ -5,6 +5,10 @@
 *:focus {
     outline: none;
 }
+*{
+    max-height: 100vh;
+    overflow-y: hidden;
+}
 h1{
     font-size: 4vmin;
 }

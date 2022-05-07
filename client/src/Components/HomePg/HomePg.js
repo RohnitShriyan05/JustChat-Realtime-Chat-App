@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar/Sidebar";
 export default function HomePg(){
     return(
         <div className="home__wrapper flex">
-            <Sidebar className='hidden'/>
+            <Sidebar/>
             <Chat/>
         </div>
     );
