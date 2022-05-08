@@ -1,7 +1,10 @@
 import "./LoginPg.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { userContext } from "../../App";
 import { auth, provider } from "../../firebase";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 import SendIcon from "@mui/icons-material/Send";
 export default function LoginPg() {
   const context = useContext(userContext);
@@ -18,7 +21,18 @@ export default function LoginPg() {
       })
       .catch((error) => alert(error.message));
   };
-  
+  const setUser= context.setUser;
+  const setLogin= context.setLogin;
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+      setUser({
+        name: firebaseUser.displayName,
+        email: firebaseUser.email,
+        profilepic: firebaseUser.photoURL
+      })
+      setLogin(1);
+    });
+  }, [setUser, setLogin]);
   return (
     <div className="h-screen w-full grid grid-rows-2 place-items-center bg-chatbg text-emerald-500 ">
       <div className="login__title flex items-center">

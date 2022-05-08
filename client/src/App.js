@@ -9,7 +9,7 @@ function App() {
   const [login, setLogin] = useState(0);
   const [currentChannelId, setCurrentChannelId] = useState("62761175434e2924bc245d7f");
   const [currentChannel, setCurrentChannel] = useState("General");
-  const [sidebarToggle, setSidebarToggle] = useState(false);
+  const [sidebarToggle, setSidebarToggle] = useState(true);
   return (
     <div className="App bg-chatbg">
       <userContext.Provider value={{sidebarToggle, setSidebarToggle, user, setUser, setLogin, currentChannelId, setCurrentChannelId, currentChannel, setCurrentChannel }}>
