@@ -12,7 +12,7 @@ function App() {
   const [sidebarToggle, setSidebarToggle] = useState(true);
   return (
     <div className="App bg-chatbg">
-      <userContext.Provider value={{sidebarToggle, setSidebarToggle, user, setUser, setLogin, currentChannelId, setCurrentChannelId, currentChannel, setCurrentChannel }}>
+      <userContext.Provider value={{sidebarToggle, setSidebarToggle, user, setUser, login, setLogin, currentChannelId, setCurrentChannelId, currentChannel, setCurrentChannel }}>
         {login === 1 ? <HomePg /> : <LoginPg />}
       </userContext.Provider>
     </div>

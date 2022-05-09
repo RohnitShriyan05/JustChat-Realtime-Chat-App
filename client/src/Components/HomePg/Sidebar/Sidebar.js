@@ -9,6 +9,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import Axios from "axios";
 import Pusher from "pusher-js";
 import CloseIcon from '@mui/icons-material/Close';
+
 const pusher = new Pusher("fc844d9fd378358e8dcb", {
   cluster: "ap2",
 });
@@ -18,18 +19,19 @@ export default function Sidebar() {
   const logout = () => {
     context.setUser({});
     context.setLogin(0);
+    localStorage.clear();
   };
   const addChannelPrompt = () => {
     const newChannelName = prompt("Enter name of channel:");
     if (newChannelName) {
-      Axios.post("http://localhost:4000/new/channel", {
+      Axios.post("https://justchat-mern.herokuapp.com/new/channel", {
         channelname: newChannelName,
       }).catch((err) => alert(err));
     }
   };
   const [channelList, setChannelList] = useState([]);
   const getChannels = () => {
-    Axios.get("http://localhost:4000/get/channelList").then((res) => {
+    Axios.get("https://justchat-mern.herokuapp.com/get/channelList").then((res) => {
       setChannelList(res.data);
     });
     console.log("this is useeffect of sidebar.js");
@@ -47,7 +49,7 @@ export default function Sidebar() {
   return (
     <div className={context.sidebarToggle ? "sidebar__wrapper hidden md:flex flex-col h-screen w-1/4 bg-sidebg text-white border-r-2 border-sidebarunder" : "sidebar__wrapper flex flex-col h-screen w-full bg-sidebg text-white border-r-2 border-sidebarunder"}>
       <div className="sidebar__header border-b-2 flex border-sidebarunder text-emerald-500">
-        <h1 className="flex-1">JUSTCHAT</h1>
+        <h1 className="flex-1 flex items-center">JUSTCHAT</h1>
         <button onClick={sidebarToggleHandle}>{context.sidebarToggle? null : <CloseIcon/>}</button>
       </div>
 

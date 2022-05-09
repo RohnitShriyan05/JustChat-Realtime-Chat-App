@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const mongoData = require("./Models/mongoData.js");
 const Pusher = require('pusher');
-
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
@@ -139,4 +139,4 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 
-app.listen(4000);
+app.listen(process.env.PORT || 4000);

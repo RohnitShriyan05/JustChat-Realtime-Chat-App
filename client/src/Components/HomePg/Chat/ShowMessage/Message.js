@@ -14,7 +14,7 @@ export default function Message(props) {
   
   const getConversation = (channelId) => {
     if (channelId) {
-      Axios.get(`http://localhost:4000/get/conversation?id=${channelId}`).then(
+      Axios.get(`https://justchat-mern.herokuapp.com/get/conversation?id=${channelId}`).then(
         (res) => {
           setMessage(res.data);
         }

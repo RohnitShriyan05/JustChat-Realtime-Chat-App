@@ -16,7 +16,7 @@ export default function Chat(){
     const changeChannelName = ()=>{
         const updatedname = prompt("edit channel name:")
         if(updatedname){
-           Axios.post(`http://localhost:4000/update/channel?id=${context.currentChannelId}`,{channelname:updatedname}).catch((err)=>alert(err));
+           Axios.post(`https://justchat-mern.herokuapp.com/update/channel?id=${context.currentChannelId}`,{channelname:updatedname}).catch((err)=>alert(err));
         }
         context.setCurrentChannel(updatedname);
     }
@@ -26,10 +26,10 @@ export default function Chat(){
     const deleteChannel= ()=>{
         const deletedChannel= prompt("THIS WILL DELELTE ALL THE DATA IN THE CHANNEL TO CONTINUE ENTER THE CURRENT CHANNEL NAME");
         if(deletedChannel==="General"){
-            alert("Cannot delete General channel");
+            alert("Cannot delete channel:General");
         }
         else if(deletedChannel===context.currentChannel){
-            Axios.post("http://localhost:4000/delete/channel", {id:context.currentChannelId}).catch((err)=>alert(err));
+            Axios.post("https://justchat-mern.herokuapp.com/delete/channel", {id:context.currentChannelId}).catch((err)=>alert(err));
             window.location.reload();
         }
         else{

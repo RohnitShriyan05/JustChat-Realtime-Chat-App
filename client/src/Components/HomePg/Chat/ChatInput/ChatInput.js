@@ -7,7 +7,7 @@ export default function ChatInput(props) {
     const [input, setInput] = useState();
     const sendMessage = (e)=>{
         e.preventDefault();
-        Axios.post(`http://localhost:4000/new/message`,{
+        Axios.post(`https://justchat-mern.herokuapp.com/new/message`,{
             id: props.id,
             message: input,
             user : props.user.name,
