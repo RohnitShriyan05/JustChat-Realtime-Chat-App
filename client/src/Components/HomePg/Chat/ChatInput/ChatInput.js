@@ -13,7 +13,7 @@ export default function ChatInput(props) {
             user : props.user.name,
             timestamp: Date.now(),
             profilepic: props.user.profilepic
-        }).catch((err)=>alert(err));
+        }).catch((err)=>console.log(err));
         setInput("");
     }
   return (

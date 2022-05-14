@@ -29,12 +29,12 @@ export default function Message(props) {
     });
   },[channelId]);
   return (
-    <ScrollableFeed className="flex-1 message__wrapper flex flex-col  overflow-scroll ">
+    <ScrollableFeed className="flex-1 message__wrapper flex flex-col  overflow-scroll">
       {message.map((messages, key) => {
         return (
-          <div className="flex items-center message__display" key={messages.id}>
-            <Avatar alt={messages.user} src={messages.profilepic} className='svgicon'/>
-            <div className="flex flex-col px-2">
+          <div className="relative flex items-center message__display justify-start " key={messages.id}>
+            <Avatar alt={messages.user} src={messages.profilepic} className='realtive svgicon'/>
+            <div className="relative px-2 ">
               <h3 className="username text-neutral-300">
                 {messages.user}
                 {"  "}

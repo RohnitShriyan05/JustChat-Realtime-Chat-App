@@ -6,7 +6,7 @@ const mongoData = require("./Models/mongoData.js");
 const Pusher = require('pusher');
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({origin: '*'}));
 app.use(express.json());
 mongoose.Promise = global.Promise;
 
@@ -20,7 +20,7 @@ const pusher = new Pusher({
 
 //DATABASE CONNECTION
 const dblink =
-  "mongodb+srv://rohnitshriyan:rohnitvs@cluster0.weq1x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.weq1x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose.connect(dblink, {useNewUrlParser: true,});
 mongoose.connection.once('open', ()=>{
   console.log("Connected to database");
@@ -136,7 +136,7 @@ app.get("/get/conversation", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("hello");
+  res.send("Connected");
 });
 
 app.listen(process.env.PORT || 4000);

@@ -16,7 +16,7 @@ export default function Chat(){
     const changeChannelName = ()=>{
         const updatedname = prompt("edit channel name:")
         if(updatedname){
-           Axios.post(`https://justchat-mern.herokuapp.com/update/channel?id=${context.currentChannelId}`,{channelname:updatedname}).catch((err)=>alert(err));
+           Axios.post(`https://justchat-mern.herokuapp.com/update/channel?id=${context.currentChannelId}`,{channelname:updatedname}).catch((err)=>console.log(err));
         }
         context.setCurrentChannel(updatedname);
     }
@@ -29,7 +29,7 @@ export default function Chat(){
             alert("Cannot delete channel:General");
         }
         else if(deletedChannel===context.currentChannel){
-            Axios.post("https://justchat-mern.herokuapp.com/delete/channel", {id:context.currentChannelId}).catch((err)=>alert(err));
+            Axios.post("https://justchat-mern.herokuapp.com/delete/channel", {id:context.currentChannelId}).catch((err)=>console.log(err));
             window.location.reload();
         }
         else{
@@ -43,7 +43,7 @@ export default function Chat(){
                 <button onClick={sidebarToggleHandle} className="md:hidden flex">{context.sidebarToggle? <MenuIcon/>: null}</button>
                 <h1 className='flex-1'>{context.currentChannel}</h1>
                 <button onClick={changeChannelName}><ModeEditIcon className='text-neutral-300 hover:text-white svgicon'/></button>
-                <button><PeopleIcon className='mx-4 text-neutral-300 hover:text-white svgicon'/></button>
+                <button><PeopleIcon className=' text-neutral-300 hover:text-white svgicon'/></button>
                 <button onClick={deleteChannel}><DeleteIcon className='text-neutral-300 hover:text-white svgicon'/></button>
              </div>
             <Message className='flex-1' id={context.currentChannelId} user={context.user.name}/>

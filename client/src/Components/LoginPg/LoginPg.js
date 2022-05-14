@@ -36,7 +36,7 @@ export default function LoginPg() {
   return (
     <div className="h-screen w-full grid grid-rows-2 place-items-center bg-chatbg text-emerald-500 ">
       <div className="login__title flex items-center">
-        <h1 className="login__title text-white">JUSTCHAT</h1>
+        <h1 className="login__title text-white">JUSCHAT</h1>
         <SendIcon
           className="login__icon text-emerald-500"
           fontSize="xx-large"

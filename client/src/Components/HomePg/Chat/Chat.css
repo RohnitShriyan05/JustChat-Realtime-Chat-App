@@ -7,9 +7,6 @@
 .chat__smalltext{
     font-size: 2.5vmin;
 }
-*{
-    max-height: 100vh;
-}
 .chat__header{
     padding-top:1.5vmin;
     padding-bottom:1vmin;

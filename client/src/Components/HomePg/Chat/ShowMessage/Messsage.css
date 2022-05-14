@@ -1,7 +1,5 @@
 .message__wrapper{
-    overflow-y: scroll;
-    overflow-x: hidden;
-    
+    overflow:scroll;
 }
 .message__wrapper::-webkit-scrollbar {
     display: none;
@@ -14,5 +12,5 @@
 .message__display{
     padding-top: 2vh;  
     padding-left: 2vw;
-    padding-right: 2vw;  
+    padding-right: 2vw; 
 }
