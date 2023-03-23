@@ -12,4 +12,4 @@ JusChat is a web-based application that replicates the features and functionalit
 
 ## 🌐 Visit Site
 
-https://juschat.netlify.app/
+[Link](https://juschat.netlify.app/)
