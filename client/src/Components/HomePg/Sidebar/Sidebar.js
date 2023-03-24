@@ -24,14 +24,14 @@ export default function Sidebar() {
   const addChannelPrompt = () => {
     const newChannelName = prompt("Enter name of channel:");
     if (newChannelName) {
-      Axios.post("https://justchat-mern.herokuapp.com/new/channel", {
+      Axios.post("https://juschat.onrender.com/new/channel", {
         channelname: newChannelName,
       }).catch((err) => console.log(err));
     }
   };
   const [channelList, setChannelList] = useState([]);
   const getChannels = () => {
-    Axios.get("https://justchat-mern.herokuapp.com/get/channelList").then((res) => {
+    Axios.get("https://juschat.onrender.com/get/channelList").then((res) => {
       setChannelList(res.data);
     });
   };

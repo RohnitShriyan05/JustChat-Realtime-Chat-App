@@ -16,7 +16,7 @@ export default function Chat(){
     const changeChannelName = ()=>{
         const updatedname = prompt("edit channel name:")
         if(updatedname){
-           Axios.post(`https://justchat-mern.herokuapp.com/update/channel?id=${context.currentChannelId}`,{channelname:updatedname}).catch((err)=>console.log(err));
+           Axios.post(`https://juschat.onrender.com/update/channel?id=${context.currentChannelId}`,{channelname:updatedname}).catch((err)=>console.log(err));
         }
         context.setCurrentChannel(updatedname);
     }
@@ -29,7 +29,7 @@ export default function Chat(){
             alert("Cannot delete channel:General");
         }
         else if(deletedChannel===context.currentChannel){
-            Axios.post("https://justchat-mern.herokuapp.com/delete/channel", {id:context.currentChannelId}).catch((err)=>console.log(err));
+            Axios.post("https://juschat.onrender.com/delete/channel", {id:context.currentChannelId}).catch((err)=>console.log(err));
             window.location.reload();
         }
         else{
