@@ -21,7 +21,7 @@ const pusher = new Pusher({
 //DATABASE CONNECTION
 const dblink =
   `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.weq1x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-mongoose.set("strictQuery", false);
+
 mongoose.connect(dblink, {useNewUrlParser: true,});
 mongoose.connection.once('open', ()=>{
   console.log("Connected to database");
